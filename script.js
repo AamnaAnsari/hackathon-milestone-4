@@ -1,20 +1,34 @@
-var _a;
-var generateResumeHtml = function (data) {
-    return "\n        <h2>Resume</h2>\n        <p><strong>Name:</strong> ".concat(data.name, "</p>\n        <p><strong>Email:</strong> ").concat(data.email, "</p>\n        <h3>Education</h3>\n        <p>").concat(data.education, "</p>\n        <h3>Work Experience</h3>\n        <p>").concat(data.workExperience, "</p>\n        <h3>Skills</h3>\n        <p>").concat(data.skills, "</p>\n    ");
-};
-var handleFormSubmit = function (event) {
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
     var form = document.getElementById('resumeForm');
-    var resumeData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        education: document.getElementById('education').value,
-        workExperience: document.getElementById('workExperience').value,
-        skills: document.getElementById('skills').value,
-    };
     var resumeOutput = document.getElementById('resumeOutput');
-    if (resumeOutput) {
-        resumeOutput.innerHTML = generateResumeHtml(resumeData);
-    }
-};
-(_a = document.getElementById('resumeForm')) === null || _a === void 0 ? void 0 : _a.addEventListener('submit', handleFormSubmit);
+    var editResumeBtn = document.getElementById('editResumeBtn');
+    var saveChangesBtn = document.getElementById('saveChangesBtn');
+    var generateResumeBtn = document.getElementById('generateResumeBtn');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        // Get form data
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var education = document.getElementById('education').value;
+        var workExperience = document.getElementById('workExperience').value;
+        var skills = document.getElementById('skills').value;
+        // Display resume
+        resumeOutput.innerHTML = "\n            <h2>".concat(name, "</h2>\n            <p><strong>Email:</strong> ").concat(email, "</p>\n            <h3>Education</h3>\n            <p>").concat(education, "</p>\n            <h3>Work Experience</h3>\n            <p>").concat(workExperience, "</p>\n            <h3>Skills</h3>\n            <p>").concat(skills, "</p>\n        ");
+        // Show edit button and hide generate button
+        editResumeBtn.classList.remove('hidden');
+        form.classList.add('hidden');
+        generateResumeBtn.classList.add('hidden');
+    });
+    editResumeBtn.addEventListener('click', function () {
+        // Show form and hide edit button
+        form.classList.remove('hidden');
+        generateResumeBtn.classList.remove('hidden');
+        editResumeBtn.classList.add('hidden');
+        saveChangesBtn.classList.remove('hidden');
+    });
+    saveChangesBtn.addEventListener('click', function () {
+        // Hide save changes button and show edit button
+        saveChangesBtn.classList.add('hidden');
+        editResumeBtn.classList.remove('hidden');
+    });
+});

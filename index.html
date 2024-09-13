@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <br>
     <div class="container">
         <h1>Dynamic Resume Builder By Aamna Ansari</h1>
         <form id="resumeForm">
@@ -34,12 +35,15 @@
                 <textarea id="skills" name="skills" placeholder="Your skills here..." required></textarea>
             </fieldset>
 
-            <button type="submit">Generate Resume</button>
+            <button type="submit" id="generateResumeBtn">Generate Resume</button>
         </form>
+
+        <button id="editResumeBtn" class="hidden">Edit Your Resume</button>
+        <button id="saveChangesBtn" class="hidden">Save Changes</button>
 
         <div id="resumeOutput" class="resume-output"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
 </body>
 </html>
