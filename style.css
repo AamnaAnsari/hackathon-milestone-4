@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFF5E1;
+    color: #333333;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    padding: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+    transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+}
+
+.container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+}
+
+h1 {
+    color: #B76E79;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    animation: fadeIn 1s ease-in-out; /* Animation for heading */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+form fieldset {
+    border: 1px solid #DDDDDD;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px; /* Rounded corners for fieldset */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for fieldset */
+    transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+}
+
+form fieldset:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+legend {
+    color: #9b2839;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], 
+input[type="email"], 
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+textarea:focus {
+    border-color: #B76E79; /* Highlight border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #B76E79;
+    color: #FFFFFF;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for background color and scaling */
+}
+
+button:hover {
+    background-color: #b7183f;
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.resume-output {
+    margin-top: 20px;
+}
+
+.resume-output h2 {
+    border-bottom: 2px solid #b42137;
+    padding-bottom: 5px;
+    font-size: 1.5em;
+    animation: slideIn 0.5s ease-out; /* Animation for resume title */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.resume-output p {
+    margin: 5px 0;
+}
